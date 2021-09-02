@@ -10,6 +10,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { useDispatch, useSelector } from 'react-redux';
 import {auth} from "../../redux/features/application"
+import {Link} from "react-router-dom"
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -67,7 +68,7 @@ function SigninPage(props) {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Sign up
+          Sign in
         </Typography>
         <form className={classes.form} noValidate>
           <Grid container spacing={2}>
@@ -108,6 +109,13 @@ function SigninPage(props) {
           >
             Sign In
           </Button>
+          <Grid container>
+            <Grid item xs>
+              <Link to="/signup" variant="body2">
+                Register
+              </Link>
+            </Grid>
+          </Grid>
         </form>
         <Typography component="p" variant="p" className={classes.error}>
           {error}

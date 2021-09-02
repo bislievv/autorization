@@ -10,6 +10,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { useDispatch, useSelector } from 'react-redux';
 import {createUser} from "../../redux/features/application"
+import {Link} from "react-router-dom"
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -108,6 +109,13 @@ function SignupPage(props) {
           >
             Sign Up
           </Button>
+          <Grid container>
+            <Grid item xs>
+              <Link to="/signin" variant="body2">
+                Login
+              </Link>
+            </Grid>
+          </Grid>
         </form>
         <Typography component="p" variant="p" className={classes.error}>
           {error}
